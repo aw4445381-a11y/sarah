@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pets — Sarah’s Joyful Life</title>
+  <meta name="description" content="Sarah’s dream pets: Cocker Spaniel, Australian Shepherd, Sheltie, Mitted Ragdoll, and Scottish Fold.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="pet_style.css">
+</head>
+<body class="floral-bg">
+  <!-- App Bar -->
+  <header class="header" role="banner">
+    <div class="container nav" role="navigation" aria-label="Primary">
+      <a class="brand" href="index.html" aria-label="Sarah’s Joyful Life — Home">
+        <span class="bow">🎀</span> <span>Sarah’s Joyful Life</span>
+      </a>
+      <nav class="navlinks" aria-label="Main menu">
+        <a href="about.html">About</a>
+        <a href="flowers.html">Flowers</a>
+        <a href="faith.html">Faith</a>
+        <a href="dreams.html">Dreams</a>
+        <a href="pets.html" aria-current="page">Pets</a>
+        <a href="gallery.html" aria-current="page">Gallery</a>
+      </nav>
+      <div class="actions">
+        <button class="iconbtn" id="themeToggle" aria-label="Toggle theme">🌓</button>
+        <button class="iconbtn menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="container">
+    <section class="card">
+      <p class="kicker">Gallery</p>
+      <h1>My Dream Pets</h1>
+      <p class="lead">Dogs and cats I’d love to share that cozy, flower-filled home with.</p>
+
+      <div class="gallery" role="list">
+        <figure class="tile" role="listitem">
+          <img src="cockerspaniel.jpg" alt="Cocker Spaniel">
+          <figcaption class="cap">Cocker Spaniel</figcaption>
+        </figure>
+
+        <figure class="tile" role="listitem">
+          <img src="Australian-shepherd-dog.webp" alt="Australian Shepherd">
+          <figcaption class="cap">Australian Shepherd</figcaption>
+        </figure>
+
+        <figure class="tile" role="listitem">
+          <img src="sheltiedog.webp" alt="Sheltie">
+          <figcaption class="cap">Sheltie</figcaption>
+        </figure>
+
+        <figure class="tile" role="listitem">
+          <img src="catmittedragdoll.webp" alt="Mitted Ragdoll">
+          <figcaption class="cap">Mitted Ragdoll</figcaption>
+        </figure>
+
+        <figure class="tile" role="listitem">
+          <img src="scottishfoldcat.jpg" alt="Scottish Fold">
+          <figcaption class="cap">Scottish Fold</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="container">
+    <p>Made with love, joy, and lots of flowers. © Sarah</p>
+  </footer>
+
+
+
+  <script>
+    // Theme toggle (keeps user preference across pages)
+    const themeBtn = document.getElementById('themeToggle');
+    const htmlEl = document.documentElement;
+    const saved = localStorage.getItem('theme');
+    if(saved){ htmlEl.setAttribute('data-theme', saved); }
+    themeBtn.addEventListener('click', () => {
+      const next = htmlEl.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      htmlEl.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuToggle');
+    const drawer = document.getElementById('drawer');
+    menuBtn?.addEventListener('click', () => drawer.classList.toggle('open'));
+    document.addEventListener('click', (e) => {
+      if(!drawer.contains(e.target) && !menuBtn.contains(e.target)) drawer.classList.remove('open');
+    });
+  </script>
+</body>
+</html>

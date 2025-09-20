@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gallery — Sarah’s Joyful Life</title>
+  <meta name="description" content="Snapshots of joy — Sarah’s visual diary of portraits, flowers, friends, travels, and art." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="gallery_style.css" />
+</head>
+<body class="floral-bg">
+  <!-- Navbar -->
+  <header class="header" role="banner">
+    <div class="container nav" role="navigation" aria-label="Primary">
+      <a class="brand" href="index.html" aria-label="Sarah’s Joyful Life — Home">
+        <span class="bow">🎀</span> <span>Sarah’s Joyful Life</span>
+      </a>
+      <nav class="navlinks" aria-label="Main menu">
+        <a href="about.html">About</a>
+        <a href="flowers.html">Flowers</a>
+        <a href="faith.html">Faith</a>
+        <a href="dreams.html">Dreams</a>
+        <a href="pets.html">Pets</a>
+        <a href="gallery.html" aria-current="page">Gallery</a>
+      </nav>
+      <div class="actions">
+        <button class="iconbtn" id="themeToggle" aria-label="Toggle theme">🌓</button>
+        <button class="iconbtn menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+    <!-- mobile drawer -->
+    <div class="container mobile-drawer" id="drawer" aria-label="Mobile menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="flowers.html">Flowers</a>
+      <a href="faith.html">Faith</a>
+      <a href="dreams.html">Dreams</a>
+      <a href="pets.html">Pets</a>
+      <a href="gallery.html" aria-current="page">Gallery</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero / Controls -->
+    <section class="card hero">
+      <div class="hero-copy">
+        <p class="kicker">Gallery</p>
+        <h1>Snapshots of Joy</h1>
+        <p class="lead">
+          A visual diary of portraits, flowers, friends, travel, and art — the cozy colors that keep my heart soft.
+        </p>
+        <div class="stats" aria-live="polite">
+          <span><strong id="countAll">0</strong> photos</span>
+          <span>•</span>
+          <span id="activeFilterLabel">Showing: <em>All</em></span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="chiprow" role="toolbar" aria-label="Filter gallery">
+          <button class="chip active" data-filter="all" aria-pressed="true">All</button>
+          <button class="chip" data-filter="portraits" aria-pressed="false">Portraits</button>
+          <button class="chip" data-filter="flowers" aria-pressed="false">Flowers</button>
+          <button class="chip" data-filter="friends" aria-pressed="false">Friends</button>
+          <button class="chip" data-filter="travel" aria-pressed="false">Travel</button>
+          <button class="chip" data-filter="art" aria-pressed="false">Art</button>
+        </div>
+
+        <label class="search">
+          <span class="sr-only">Search captions</span>
+          <input id="searchBox" type="search" placeholder="Search captions… (e.g., ‘Lisbon’ or ‘orchid’)" aria-label="Search captions" />
+          <span class="kbd">/</span>
+        </label>
+      </div>
+    </section>
+
+    <!-- Masonry (CSS columns) -->
+    <section class="masonry" id="gallery" role="list" aria-label="Photo grid">
+      <!-- Use only the provided images -->
+      <figure class="card tile" role="listitem" data-cat="portraits" data-caption="My happy time — Sarah smiling">
+        <a href="images/portrait1.jpg" class="zoom" aria-label="Open photo: Sarah smiling">
+          <img src="images/portrait1.jpg" alt="Sarah smiling" loading="lazy">
+        </a>
+        <figcaption>
+          <h3>My happy time</h3>
+          <p>“Sun on my cheeks, hymn in my head.”</p>
+          <span class="meta">Category: Portraits</span>
+        </figcaption>
+      </figure>
+
+      <figure class="card tile" role="listitem" data-cat="portraits" data-caption="Looking down to my problems — soft light portrait">
+        <a href="images/portrait2.jpg" class="zoom" aria-label="Open photo: Sarah looking down">
+          <img src="images/portrait2.jpg" alt="Sarah looking down in soft light" loading="lazy">
+        </a>
+        <figcaption>
+          <h3>Looking down to my problems</h3>
+          <p>Choosing peace over worry.</p>
+          <span class="meta">Category: Portraits</span>
+        </figcaption>
+      </figure>
+
+      <figure class="card tile" role="listitem" data-cat="flowers" data-caption="Daffodils glow — golden petals">
+        <a href="daffoldils.webp" class="zoom" aria-label="Open photo: Daffodils glow">
+          <img src="daffoldils.webp" alt="Golden daffodils shining in soft light" loading="lazy">
+        </a>
+        <figcaption>
+          <h3>Daffodils glow</h3>
+          <p>Golden notes for rainy days.</p>
+          <span class="meta">Category: Flowers</span>
+        </figcaption>
+      </figure>
+
+   
+
+      <figure class="card tile" role="listitem" data-cat="friends" data-caption="Best Friends for life — polaroid vibes">
+        <a href="images/friend2.png" class="zoom" aria-label="Open photo: Best Friends for life">
+          <img src="images/friend2.png" alt="Best friends linking arms, bright afternoon" loading="lazy">
+        </a>
+        <figcaption>
+          <h3>Best Friends for life</h3>
+          <p>Pinky promise and shared playlists.</p>
+          <span class="meta">Category: Friends</span>
+        </figcaption>
+      </figure>
+
+      <figure class="card tile" role="listitem" data-cat="art" data-caption="Looking Amazing — portrait study">
+        <a href="images/portrait3.jpg" class="zoom" aria-label="Open photo: Portrait study">
+          <img src="images/portrait3.jpg" alt="Portrait study with warm tones and florals" loading="lazy">
+        </a>
+        <figcaption>
+          <h3>Looking Amazing</h3>
+          <p>Practice makes confidence — and better brushwork.</p>
+          <span class="meta">Category: Art</span>
+        </figcaption>
+      </figure>
+
+      <figure class="card tile" role="listitem" data-cat="flowers" data-caption="Don’t Look Back In Anger — floral portrait">
+        <a href="images/portrait4.jpg" class="zoom" aria-label="Open photo: Floral portrait">
+          <img src="images/portrait4.jpg" alt="Portrait with floral vibe, soft blush tones" loading="lazy">
+        </a>
+        <figcaption>
+          <h3>Don’t Look Back In Anger</h3>
+          <p>Mercy over memory; a soft reset.</p>
+          <span class="meta">Category: Flowers</span>
+        </figcaption>
+      </figure>
+
+      <figure class="card tile" role="listitem" data-cat="travel" data-caption="Lisbon tiles — Alfama street">
+        <a href="images/travel2.jpg" class="zoom" aria-label="Open photo: Lisbon tiles">
+          <img src="images/travel2.jpg" alt="Colorful street in Lisbon with tiles" loading="lazy">
+        </a>
+        <figcaption>
+          <h3>Lisbon tiles</h3>
+          <p>Blue azulejos and long church goodbyes.</p>
+          <span class="meta">Category: Travel</span>
+        </figcaption>
+      </figure>
+
+      <figure class="card tile" role="listitem" data-cat="art" data-caption="Sketchbook florals — pen and ink practice">
+        <a href="images/art2.jpg" class="zoom" aria-label="Open photo: Sketchbook florals">
+          <img src="images/art2.jpg" alt="Sketchbook open with floral drawings" loading="lazy">
+        </a>
+        <figcaption>
+          <h3>Sketchbook florals</h3>
+          <p>Peach petals and lilac shadows; longer breaths, softer lines.</p>
+          <span class="meta">Category: Art</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- Notes / Footer card -->
+    <section class="card afterword">
+      <div>
+        <h2 class="holo-text">Behind the lens</h2>
+        <p class="lead">I keep things simple — natural light, patient timing, and the courage to notice small beauty.</p>
+        <ul class="notes">
+          <li><strong>Editing:</strong> Gentle contrast, warm whites, and film-like grain.</li>
+          <li><strong>Inspiration:</strong> Old hymns, market flowers, good bread, and grandma stories.</li>
+          <li><strong>Favorite colors:</strong> Blush, lilac, mint, and sunshine yellow.</li>
+        </ul>
+      </div>
+      <div class="cta-right">
+        <a class="btn" href="gallery.html" aria-label="Reload the gallery">Refresh</a>
+        <a class="btn ghost" href="about.html">Meet Sarah →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <p>Made with love, joy, and lots of flowers. © Sarah</p>
+  </footer>
+
+  <!-- Lightbox (native dialog) -->
+  <dialog id="lightbox" aria-label="Image viewer">
+    <button class="close" aria-label="Close viewer">✕</button>
+    <button class="nav prev" aria-label="Previous image">‹</button>
+    <img id="lightboxImg" alt="">
+    <button class="nav next" aria-label="Next image">›</button>
+    <p id="lightboxCap" class="caption"></p>
+    <div class="lb-bar">
+      <a id="lbDownload" class="btn tiny" download>Download</a>
+      <span id="lbIndex" class="tinycount" aria-live="polite"></span>
+    </div>
+  </dialog>
+
+  <script>
+    // Theme toggle
+    const themeBtn = document.getElementById('themeToggle');
+    const htmlEl = document.documentElement;
+    const saved = localStorage.getItem('theme');
+    if (saved) htmlEl.setAttribute('data-theme', saved);
+    themeBtn?.addEventListener('click', () => {
+      const next = htmlEl.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      htmlEl.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+
+    // Mobile drawer
+    const menuBtn = document.getElementById('menuToggle');
+    const drawer = document.getElementById('drawer');
+    menuBtn?.addEventListener('click', () => drawer.classList.toggle('open'));
+    document.addEventListener('click', (e) => {
+      if (drawer && !drawer.contains(e.target) && !menuBtn.contains(e.target)) drawer.classList.remove('open');
+    });
+
+    // --- Gallery logic: filtering + search + counts ---
+    const chips = [...document.querySelectorAll('.chiprow .chip')];
+    const grid = document.getElementById('gallery');
+    const items = [...grid.querySelectorAll('.tile')];
+    const searchBox = document.getElementById('searchBox');
+    const activeLabel = document.getElementById('activeFilterLabel');
+    const countAll = document.getElementById('countAll');
+
+    // initial counts
+    countAll.textContent = items.length;
+
+    let activeFilter = 'all';
+    let query = '';
+
+    function applyFilters() {
+      const q = query.trim().toLowerCase();
+      let visible = 0;
+      items.forEach(el => {
+        const cats = (el.dataset.cat || '').split(' ');
+        const inFilter = (activeFilter === 'all') || cats.includes(activeFilter);
+        const text = (el.dataset.caption || el.innerText).toLowerCase();
+        const inSearch = !q || text.includes(q);
+        const show = inFilter && inSearch;
+        el.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      activeLabel.innerHTML = `Showing: <em>${activeFilter === 'all' ? 'All' : activeFilter}</em> (${visible})`;
+      currentList = items.filter(el => el.style.display !== 'none');
+      // Reset lightbox index if needed
+      if (currentIndex >= currentList.length) currentIndex = currentList.length - 1;
+    }
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => { c.classList.remove('active'); c.setAttribute('aria-pressed','false'); });
+        chip.classList.add('active');
+        chip.setAttribute('aria-pressed','true');
+        activeFilter = chip.dataset.filter;
+        applyFilters();
+      });
+    });
+
+    // search ("/" to focus)
+    searchBox.addEventListener('input', (e) => { query = e.target.value; applyFilters(); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== searchBox) {
+        e.preventDefault(); searchBox.focus();
+      }
+    });
+
+    // --- Lightbox with next/prev ---
+    const dlg = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    const lbCap = document.getElementById('lightboxCap');
+    const lbDownload = document.getElementById('lbDownload');
+    const idxText = document.getElementById('lbIndex');
+    const btnPrev = dlg.querySelector('.nav.prev');
+    const btnNext = dlg.querySelector('.nav.next');
+    const btnClose = dlg.querySelector('.close');
+
+    let currentList = items.slice();   // items respecting filters/search
+    let currentIndex = 0;
+
+    function openAt(index) {
+      currentIndex = index;
+      const fig = currentList[currentIndex];
+      const a = fig.querySelector('a.zoom');
+      const src = a.getAttribute('href');
+      const cap = fig.querySelector('figcaption')?.innerText.trim() || '';
+      lbImg.src = src;
+      lbImg.alt = a.querySelector('img')?.alt || '';
+      lbCap.textContent = cap;
+      lbDownload.href = src;
+      idxText.textContent = `${currentIndex + 1} / ${currentList.length}`;
+      if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open','');
+    }
+    function next() { if (!currentList.length) return; currentIndex = (currentIndex + 1) % currentList.length; openAt(currentIndex); }
+    function prev() { if (!currentList.length) return; currentIndex = (currentIndex - 1 + currentList.length) % currentList.length; openAt(currentIndex); }
+
+    grid.querySelectorAll('.zoom').forEach((a, i) => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        // recompute current visible list and index mapping
+        currentList = items.filter(el => el.style.display !== 'none');
+        const fig = a.closest('.tile');
+        const indexInVisible = currentList.indexOf(fig);
+        openAt(indexInVisible >= 0 ? indexInVisible : 0);
+      });
+    });
+
+    btnPrev.addEventListener('click', prev);
+    btnNext.addEventListener('click', next);
+    btnClose.addEventListener('click', () => dlg.close());
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+    document.addEventListener('keydown', (e) => {
+      if (!dlg.open) return;
+      if (e.key === 'Escape') dlg.close();
+      if (e.key === 'ArrowRight') next();
+      if (e.key === 'ArrowLeft') prev();
+    });
+
+    // initial render
+    applyFilters();
+  </script>
+</body>
+</html>

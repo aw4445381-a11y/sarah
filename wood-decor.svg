@@ -1,0 +1,7 @@
+<!-- SVG wooden decor element for cozy/rustic vibe. Placeholder, replace with a more detailed SVG or image for realism. -->
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="120" height="40" rx="12" fill="#a67c52" stroke="#7d5a3a" stroke-width="4"/>
+  <ellipse cx="30" cy="20" rx="8" ry="4" fill="#c19a6b"/>
+  <ellipse cx="90" cy="20" rx="8" ry="4" fill="#c19a6b"/>
+</svg>
+<!-- Add more wood grain details for realism -->
